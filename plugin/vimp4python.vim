@@ -46,6 +46,10 @@ if exists("loaded_vimp4python")
 endif
 let loaded_vimp4python=1
 
+if (!has('win32'))
+    finish
+endif
+
 if (has('python') || has('python/dyn'))
     let loaded_vimp4python=1
 else
