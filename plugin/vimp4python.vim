@@ -53,7 +53,7 @@ endif
 if (has('python') || has('python/dyn'))
     let loaded_vimp4python=1
 else
-    echoerr "vimp4python requires python"
+    "echoerr "vimp4python requires python"
     finish
 endif
 
@@ -73,7 +73,7 @@ except:
     vim.command("let b:hasp4 = \"0\"")
 EOF
 if b:hasp4 == "0"
-    echoerr "Failed to load P4Python API"
+    "echoerr "Failed to load P4Python API"
     finish
 endif
 
