@@ -118,25 +118,25 @@ augroup vimp4python
     autocmd BufRead * call <SID>P4InitialBufferVariables()
     autocmd BufRead * call <SID>P4FstatVars()
 
-    " Keyboard shortcuts - default <Leader> is \
-    map <silent> <Leader>add :call P4Add()<CR>
-    map <silent> <Leader>c :call P4PendingChanges()<CR>
-    map <silent> <Leader>d :call P4Diff()<CR>
-    map <silent> <Leader>e :call P4Edit()<CR>
-    map <silent> <Leader>f :call P4Fstat()<CR>
-    map <silent> <Leader>h :call P4Changes()<CR>
-    map <silent> <Leader>i :call P4Info()<CR>
-    map <silent> <Leader>k :call P4Lock()<CR>
-    map <silent> <Leader>l :call P4Filelog()<CR>
-    map <silent> <Leader>m :call P4ReopenChange()<CR>
-    map <silent> <Leader>n :call P4NewChange()<CR>
-    map <silent> <Leader>o :call P4Opened()<CR>
-    map <silent> <Leader>r :call P4Revert()<CR>
-    map <silent> <Leader>s :call P4Sync()<CR>
-    map <silent> <Leader>u :call P4Unlock()<CR>
-    map <silent> <Leader>w :call P4Where()<CR>
-    map <silent> <Leader>x :call P4Delete()<CR>
-    map <silent> <Leader>z :call P4Run()<CR>
+    " commands 
+    command P4Add :call P4Add()
+    command P4PendingChanges :call P4PendingChanges()
+    command P4Diff :call P4Diff()
+    command P4Edit :call P4Edit()
+    command P4Fstat :call P4Fstat()
+    command P4Changes :call P4Changes()
+    command P4Info :call P4Info()
+    command P4Lock :call P4Lock()
+    command P4Filelog :call P4Filelog()
+    command P4ReopenChange :call P4ReopenChange()
+    command P4NewChange :call P4NewChange()
+    command P4Opened :call P4Opened()
+    command P4Revert :call P4Revert()
+    command P4Sync :call P4Sync()
+    command P4Unlock :call P4Unlock()
+    command P4Where :call P4Where()
+    command P4Delete :call P4Delete()
+    command P4Run :call P4Run()
 
     " menus
     menu <silent> &Perforce.p4\ &info                       :call P4Info()<CR>
