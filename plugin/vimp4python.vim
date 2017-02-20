@@ -390,12 +390,14 @@ endfunction
 " open for edit with prompt
 "
 function P4EditWithPrompt()
+    let view = winsaveview()
     if (b:action != "" || b:headrev != "")   " Only do this if file is in perforce
         let confirmation = confirm("p4 edit file first?" ,"&Yes\n&No", 1, "Perforce")
         if confirmation == 1
             call P4Edit()
         endif
     endif
+    call winrestview(view)
 endfunction
 
 "
