@@ -275,10 +275,10 @@ function P4RulerStatus()
         if b:headrev == ""
             return ""
         else
-            return "[P4: " . b:haverev . "/" . b:headrev . " (" . b:headtype . ")]"
+            return "P4 " . b:haverev . "/" . b:headrev . " (" . b:headtype . ")"
         endif
     else
-        return "[P4: " . b:action . " (". b:changelist . ")]"
+        return "P4 " . b:action . " (". b:changelist . ")"
     endif
 endfunction
 
@@ -338,6 +338,11 @@ except P4Exception:
         print w
     """
 EOF
+
+    if exists(':AirlineRefresh')
+        execute "AirlineRefresh"
+    endif
+
 endfunction
 
 "
