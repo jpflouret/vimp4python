@@ -275,10 +275,10 @@ function P4RulerStatus()
         if b:headrev == ""
             return ""
         else
-            return "[P4: " . b:haverev . "/" . b:headrev . " (" . b:headtype . ")]"
+            return "P4 " . b:haverev . "/" . b:headrev . " (" . b:headtype . ")"
         endif
     else
-        return "[P4: " . b:action . " (". b:changelist . ")]"
+        return "P4 " . b:action . " (". b:changelist . ")"
     endif
 endfunction
 
@@ -338,6 +338,11 @@ except P4Exception:
         print w
     """
 EOF
+
+    if exists(':AirlineRefresh')
+        execute "AirlineRefresh"
+    endif
+
 endfunction
 
 "
@@ -390,12 +395,14 @@ endfunction
 " open for edit with prompt
 "
 function P4EditWithPrompt()
+    let view = winsaveview()
     if (b:action != "" || b:headrev != "")   " Only do this if file is in perforce
         let confirmation = confirm("p4 edit file first?" ,"&Yes\n&No", 1, "Perforce")
         if confirmation == 1
             call P4Edit()
         endif
     endif
+    call winrestview(view)
 endfunction
 
 "
